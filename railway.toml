@@ -1,0 +1,23 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# Environment variables that Railway should set
+[[deploy.environmentVariables]]
+name = "PORT"
+value = "${{RAILWAY_PORT}}"
+
+[[deploy.environmentVariables]]
+name = "HOST"
+value = "0.0.0.0"
+
+# You'll need to set OPENAI_API_KEY manually in Railway dashboard
+# [[deploy.environmentVariables]]
+# name = "OPENAI_API_KEY"
+# value = "your-api-key-here" 

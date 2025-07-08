@@ -128,5 +128,18 @@ def health_check():
     return {"status": "healthy"}
     
 if __name__ == "__main__":
+    # Production-ready configuration
+    port = int(os.getenv("PORT", 8000))  # Railway sets PORT automatically
+    host = os.getenv("HOST", "0.0.0.0")
+    
+    # Initialize documents on startup
     ingest_docs()
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
+    # Start server with production settings
+    uvicorn.run(
+        app, 
+        host=host, 
+        port=port,
+        log_level="info",
+        access_log=True
+    )

@@ -23,7 +23,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 @lru_cache(maxsize=1)
 def get_embeddings():
     """Get cached embeddings instance"""
-    print(OPENAI_API_KEY)
     return OpenAIEmbeddings(model="text-embedding-3-small", api_key=OPENAI_API_KEY)
 
 @lru_cache(maxsize=1)

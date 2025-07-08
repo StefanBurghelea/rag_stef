@@ -80,13 +80,4 @@ To add new features:
 2. Add new API endpoints in `main.py`
 3. Test your changes using the interactive API docs at `/docs`
 
-## Environment Variables
-
-Consider setting up environment variables for:
-- `OPENAI_API_KEY`: Your OpenAI API key
-- `CHROMA_DB_PATH`: Path to your ChromaDB storage (optional)
-
-Create a `.env` file in the project root:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
 ``` 
