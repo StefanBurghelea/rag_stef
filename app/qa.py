@@ -1,18 +1,18 @@
 # app/qa.py
 
 from functools import lru_cache
-from langchain.vectorstores import Chroma
-from langchain.prompts import PromptTemplate
+from langchain_community.vectorstores import Chroma
+from langchain_core.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
 import os
 from dotenv import load_dotenv
 import logging
 
 load_dotenv()
 
-# Set up logging
+# Set up logging\
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
